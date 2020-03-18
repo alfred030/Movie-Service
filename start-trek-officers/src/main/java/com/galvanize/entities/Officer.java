@@ -1,9 +1,19 @@
 package com.galvanize.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Officers")
 public class Officer {
+    @Id
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(name ="officer_rank")
+     @Enumerated(EnumType.STRING)
     Rank rank;
+    @Column(name = "first_name")
     String first;
+    @Column(name = "last_name")
     String last;
 
     public Officer() {}
