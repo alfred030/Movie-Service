@@ -1,26 +1,29 @@
-package com.galvanize.hellorest.entities;
+package com.galvanize.entites;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
 
 public class Person {
-    Long id;
     String name;
     String email;
     LocalDate birthDate;
+    Long id;
 
-    pubic Person(String name, String email, String birthDate) {
+    public Person(String name, String email, LocalDate birthDate, Long id) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
+        this.id = id;
     }
 
-    public String getName() {
+    public String getName(String name) {
         return name;
     }
 
-    public String getEmail() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail(String email) {
         return email;
     }
 
@@ -32,11 +35,15 @@ public class Person {
         return birthDate;
     }
 
-    public void setBirthDate(LoacalDate birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public int getAge(){
-        return Period.between(this.birthDate, LocalDate.now()).getYears();
+    public Long getId(Long id) {
+        return id;
+    }
+
+    public void setid(Long id) {
+        this.id = id;
     }
 }
